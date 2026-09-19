@@ -7,6 +7,7 @@
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_qejjj"]
 shader = ExtResource("2_q4hjm")
+shader_parameter/brightness_value = 1.0
 shader_parameter/blur_amount = 0.0
 
 [node name="camera mode" type="Node2D" unique_id=1996290611]

@@ -12,7 +12,6 @@ func _ready():
 	
 func _on_settings_changed(_value):
 	var brightness = aperture_slider.value / 50.0
-	background.modulate = Color(brightness, brightness, brightness)
-	
+	background.material.set_shader_parameter("brightness_value", brightness)
 	var blur = (100 - shutter_slider.value) / 100.0 * 0.02
 	background.material.set_shader_parameter("blur_amount", blur)
