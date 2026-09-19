@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://bibmmjmwt604c"]
+
+[ext_resource type="Script" uid="uid://cktdc32881n6x" path="res://scripts/frameRect.gd" id="1_lpw30"]
+
+[node name="camera mode" type="Node2D" unique_id=1996290611]
+
+[node name="SceneBackground" type="Sprite2D" parent="." unique_id=708845342]
+
+[node name="FrameRect" type="ColorRect" parent="." unique_id=1433506176]
+custom_minimum_size = Vector2(300, 300)
+offset_right = 40.0
+offset_bottom = 40.0
+color = Color(1, 0.43529412, 1, 0.41568628)
+script = ExtResource("1_lpw30")

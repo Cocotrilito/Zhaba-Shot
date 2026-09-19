@@ -11,6 +11,7 @@ config_version=5
 [application]
 
 config/name="Zhaba shot"
+run/main_scene="uid://cgmhdw40tb4pd"
 config/features=PackedStringArray("4.6", "Mobile")
 config/icon="res://icon.svg"
 

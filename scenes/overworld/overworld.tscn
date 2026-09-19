@@ -1,3 +1,40 @@
 [gd_scene format=3 uid="uid://cgmhdw40tb4pd"]
 
-[node name="overworld" type="Node" unique_id=1385450790]
+[ext_resource type="Script" uid="uid://bxnhs8nw7dk6b" path="res://scripts/frog.gd" id="1_n3lcv"]
+[ext_resource type="Texture2D" uid="uid://hpb5p2ymwgrv" path="res://icon.svg" id="2_jvs31"]
+[ext_resource type="Script" uid="uid://ckmgsy3dcgk2i" path="res://scripts/photoSpot.gd" id="3_jvs31"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_662u0"]
+radius = 65.37584
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_662u0"]
+radius = 31.0
+height = 122.0
+
+[node name="overworld" type="Node2D" unique_id=658325119]
+
+[node name="Frog" type="CharacterBody2D" parent="." unique_id=232915719]
+position = Vector2(-23, 26)
+script = ExtResource("1_n3lcv")
+
+[node name="Sprite2D" type="Sprite2D" parent="Frog" unique_id=806572304]
+position = Vector2(121, 81)
+texture = ExtResource("2_jvs31")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Frog" unique_id=749970026]
+position = Vector2(127, 80)
+shape = SubResource("CircleShape2D_662u0")
+
+[node name="PhotoSpot" type="Area2D" parent="." unique_id=1469931367]
+position = Vector2(401, 95)
+script = ExtResource("3_jvs31")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PhotoSpot" unique_id=3427623]
+position = Vector2(228, 83)
+shape = SubResource("CapsuleShape2D_662u0")
+
+[node name="Sprite2D" type="Sprite2D" parent="PhotoSpot" unique_id=1828213304]
+position = Vector2(237, 81)
+texture = ExtResource("2_jvs31")
+
+[connection signal="body_entered" from="PhotoSpot" to="PhotoSpot" method="_on_body_entered"]
