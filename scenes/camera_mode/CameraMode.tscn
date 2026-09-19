@@ -1,14 +1,50 @@
 [gd_scene format=3 uid="uid://bibmmjmwt604c"]
 
 [ext_resource type="Script" uid="uid://cktdc32881n6x" path="res://scripts/frameRect.gd" id="1_lpw30"]
+[ext_resource type="Script" uid="uid://bh1312nidoc0m" path="res://scripts/CameraMode.gd" id="1_q1sx6"]
+[ext_resource type="Shader" uid="uid://pt8hqmdr371g" path="res://scenes/camera_mode/CameraMode.gdshader" id="2_q4hjm"]
+[ext_resource type="Texture2D" uid="uid://hpb5p2ymwgrv" path="res://icon.svg" id="3_qejjj"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_qejjj"]
+shader = ExtResource("2_q4hjm")
+shader_parameter/blur_amount = 0.0
 
 [node name="camera mode" type="Node2D" unique_id=1996290611]
+script = ExtResource("1_q1sx6")
 
 [node name="SceneBackground" type="Sprite2D" parent="." unique_id=708845342]
+material = SubResource("ShaderMaterial_qejjj")
+position = Vector2(485, 308)
+scale = Vector2(5.0390625, 3.5625)
+texture = ExtResource("3_qejjj")
 
 [node name="FrameRect" type="ColorRect" parent="." unique_id=1433506176]
 custom_minimum_size = Vector2(300, 300)
 offset_right = 40.0
 offset_bottom = 40.0
-color = Color(1, 0.43529412, 1, 0.41568628)
+color = Color(0.56301695, 0.7396357, 0.75621784, 0.41568628)
 script = ExtResource("1_lpw30")
+
+[node name="ApertureSlider" type="HSlider" parent="." unique_id=467043713]
+offset_left = 5.0
+offset_top = 18.0
+offset_right = 162.0
+offset_bottom = 34.0
+value = 1.0
+
+[node name="ShutterSlider" type="HSlider" parent="." unique_id=447111033]
+offset_left = 4.0
+offset_top = 38.0
+offset_right = 158.0
+offset_bottom = 54.0
+value = 1.0
+
+[node name="ISOSlider" type="HSlider" parent="." unique_id=569981968]
+offset_left = 4.0
+offset_top = 57.0
+offset_right = 159.0
+offset_bottom = 73.0
+min_value = 1.0
+value = 1.0
+
+[connection signal="changed" from="ApertureSlider" to="." method="_on_aperture_slider_changed"]
