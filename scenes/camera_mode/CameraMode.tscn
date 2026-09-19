@@ -7,6 +7,7 @@
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_qejjj"]
 shader = ExtResource("2_q4hjm")
+shader_parameter/noise_amount = 0.0
 shader_parameter/brightness_value = 1.0
 shader_parameter/blur_amount = 0.0
 
@@ -31,7 +32,7 @@ offset_left = 5.0
 offset_top = 18.0
 offset_right = 162.0
 offset_bottom = 34.0
-value = 1.0
+value = 50.0
 
 [node name="ShutterSlider" type="HSlider" parent="." unique_id=447111033]
 offset_left = 4.0
