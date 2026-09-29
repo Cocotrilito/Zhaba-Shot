@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://cgmhdw40tb4pd"]
 
+[ext_resource type="Script" uid="uid://lu7311p1c0ny" path="res://scenes/overworld/overworld.gd" id="1_662u0"]
 [ext_resource type="Script" uid="uid://bxnhs8nw7dk6b" path="res://scripts/frog.gd" id="1_n3lcv"]
 [ext_resource type="Texture2D" uid="uid://hpb5p2ymwgrv" path="res://icon.svg" id="2_jvs31"]
 [ext_resource type="Script" uid="uid://ckmgsy3dcgk2i" path="res://scripts/photoSpot.gd" id="3_jvs31"]
@@ -12,6 +13,7 @@ radius = 31.0
 height = 122.0
 
 [node name="overworld" type="Node2D" unique_id=658325119]
+script = ExtResource("1_662u0")
 
 [node name="Frog" type="CharacterBody2D" parent="." unique_id=232915719]
 position = Vector2(-23, 26)
@@ -25,6 +27,18 @@ texture = ExtResource("2_jvs31")
 position = Vector2(127, 80)
 shape = SubResource("CircleShape2D_662u0")
 
+[node name="PhotoSpot3" type="Area2D" parent="." unique_id=1857238533]
+position = Vector2(40, 43)
+script = ExtResource("3_jvs31")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PhotoSpot3" unique_id=915266711]
+position = Vector2(228, 83)
+shape = SubResource("CapsuleShape2D_662u0")
+
+[node name="Sprite2D" type="Sprite2D" parent="PhotoSpot3" unique_id=803430791]
+position = Vector2(237, 81)
+texture = ExtResource("2_jvs31")
+
 [node name="PhotoSpot" type="Area2D" parent="." unique_id=1469931367]
 position = Vector2(401, 95)
 script = ExtResource("3_jvs31")
@@ -37,4 +51,18 @@ shape = SubResource("CapsuleShape2D_662u0")
 position = Vector2(237, 81)
 texture = ExtResource("2_jvs31")
 
+[node name="PhotoSpot2" type="Area2D" parent="." unique_id=639912659]
+position = Vector2(401, 95)
+script = ExtResource("3_jvs31")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PhotoSpot2" unique_id=699609217]
+position = Vector2(-115, 325)
+shape = SubResource("CapsuleShape2D_662u0")
+
+[node name="Sprite2D" type="Sprite2D" parent="PhotoSpot2" unique_id=305903192]
+position = Vector2(-106, 328)
+texture = ExtResource("2_jvs31")
+
+[connection signal="body_entered" from="PhotoSpot3" to="PhotoSpot3" method="_on_body_entered"]
 [connection signal="body_entered" from="PhotoSpot" to="PhotoSpot" method="_on_body_entered"]
+[connection signal="body_entered" from="PhotoSpot2" to="PhotoSpot2" method="_on_body_entered"]

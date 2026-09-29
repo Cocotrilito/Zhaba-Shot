@@ -35,7 +35,11 @@ func _on_take_photo_button_pressed():
 	var total_score = (frame_score + exposure_score) / 2.0
 	
 	score_label.text = "Score: " + str(round(total_score * 100)) + "%"
-	
+	if total_score >= 0.7:
+		if not GameState.completed_missions.has(GameState.current_mission):
+			GameState.completed_missions.append(GameState.current_mission)
+		await get_tree().create_timer(1.5).timeout
+		get_tree().change_scene_to_file("res://scenes/overworld/overworld.tscn")
 	
 func calculate_frame_score():
 	print("position", frame_rect.global_position, "size:", frame_rect.size)
