@@ -12,9 +12,14 @@ extends Node2D
 
 
 func _ready():
+	aperture_slider.value = randi_range(0, 100)
+	shutter_slider.value = randi_range(0, 100)
+	iso_slider.value = randi_range(0, 100
+	)
 	aperture_slider.value_changed.connect(_on_settings_changed)
 	shutter_slider.value_changed.connect(_on_settings_changed)
 	iso_slider.value_changed.connect(_on_settings_changed)
+	take_photo_button.pressed.connect(_on_take_photo_button_pressed)
 	_on_settings_changed(0)
 	
 
@@ -54,7 +59,8 @@ func calculate_frame_score():
 
 
 func calculate_exposure_score() -> float:
-	var ideal_brightness =  1.0
+	var mission =  GameState.mission_data[GameState.current_mission]
+	var ideal_brightness = mission["ideal_brighness"]
 	var brightness_difference = abs((aperture_slider.value / 50.0) - ideal_brightness)
 	return clamp(1.0 - brightness_difference, 0.0, 1.0)
 	
