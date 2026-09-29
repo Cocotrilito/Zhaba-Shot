@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://bh1312nidoc0m" path="res://scripts/CameraMode.gd" id="1_q1sx6"]
 [ext_resource type="Shader" uid="uid://pt8hqmdr371g" path="res://scenes/camera_mode/CameraMode.gdshader" id="2_q4hjm"]
 [ext_resource type="Texture2D" uid="uid://hpb5p2ymwgrv" path="res://icon.svg" id="3_qejjj"]
+[ext_resource type="Script" uid="uid://cawove5qpni60" path="res://scenes/camera_mode/score_label.gd" id="5_dd5a2"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_qejjj"]
 shader = ExtResource("2_q4hjm")
@@ -22,8 +23,10 @@ texture = ExtResource("3_qejjj")
 
 [node name="FrameRect" type="ColorRect" parent="." unique_id=1433506176]
 custom_minimum_size = Vector2(300, 300)
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = 326.0
+offset_top = 164.0
+offset_right = 626.0
+offset_bottom = 464.0
 color = Color(0.56301695, 0.7396357, 0.75621784, 0.41568628)
 script = ExtResource("1_lpw30")
 
@@ -49,4 +52,20 @@ offset_bottom = 73.0
 min_value = 1.0
 value = 1.0
 
+[node name="TakePhotoButton" type="Button" parent="." unique_id=1036010133]
+offset_left = 9.0
+offset_top = 79.0
+offset_right = 154.0
+offset_bottom = 107.0
+text = "SHOOOT!"
+
+[node name="ScoreLabel" type="Label" parent="." unique_id=1365453263]
+offset_left = 906.0
+offset_top = 2.0
+offset_right = 1018.0
+offset_bottom = 60.0
+theme_override_font_sizes/font_size = 40
+script = ExtResource("5_dd5a2")
+
 [connection signal="changed" from="ApertureSlider" to="." method="_on_aperture_slider_changed"]
+[connection signal="pressed" from="TakePhotoButton" to="." method="_on_take_photo_button_pressed"]
