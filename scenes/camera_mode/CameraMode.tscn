@@ -67,5 +67,11 @@ offset_bottom = 60.0
 theme_override_font_sizes/font_size = 40
 script = ExtResource("5_dd5a2")
 
+[node name="HintLabel" type="Label" parent="." unique_id=1415250124]
+offset_left = 13.0
+offset_top = 122.0
+offset_right = 53.0
+offset_bottom = 145.0
+
 [connection signal="changed" from="ApertureSlider" to="." method="_on_aperture_slider_changed"]
 [connection signal="pressed" from="TakePhotoButton" to="." method="_on_take_photo_button_pressed"]

@@ -19,6 +19,12 @@ config/icon="res://icon.svg"
 
 GameState="*uid://dxu1yd8jm2xwi"
 
+[display]
+
+window/size/viewport_width=320
+window/size/viewport_height=240
+window/stretch/mode="viewport"
+
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/godot_super-wakatime/plugin.cfg")
@@ -29,5 +35,6 @@ enabled=PackedStringArray("res://addons/godot_super-wakatime/plugin.cfg")
 
 [rendering]
 
+textures/canvas_textures/default_texture_filter=0
 rendering_device/driver.windows="d3d12"
 renderer/rendering_method="mobile"

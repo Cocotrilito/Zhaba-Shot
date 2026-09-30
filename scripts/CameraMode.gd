@@ -7,15 +7,15 @@ extends Node2D
 @onready var frame_rect = $FrameRect
 @onready var take_photo_button = $TakePhotoButton
 @onready var score_label = $ScoreLabel
-
+@onready var hint_label = $HintLabel
 
 
 
 func _ready():
+	hint_label.text = GameState.mission_data[GameState.current_mission]["hint"]
 	aperture_slider.value = randi_range(0, 100)
 	shutter_slider.value = randi_range(0, 100)
-	iso_slider.value = randi_range(0, 100
-	)
+	iso_slider.value = randi_range(0, 100)
 	aperture_slider.value_changed.connect(_on_settings_changed)
 	shutter_slider.value_changed.connect(_on_settings_changed)
 	iso_slider.value_changed.connect(_on_settings_changed)
@@ -45,6 +45,9 @@ func _on_take_photo_button_pressed():
 			GameState.completed_missions.append(GameState.current_mission)
 		await get_tree().create_timer(1.5).timeout
 		get_tree().change_scene_to_file("res://scenes/overworld/overworld.tscn")
+	else:
+		score_label.text = "Score: " + str(round(total_score * 100)) + "% - Try again!"
+		score_label.modulate = Color.RED
 	
 func calculate_frame_score():
 	print("position", frame_rect.global_position, "size:", frame_rect.size)

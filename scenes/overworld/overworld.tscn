@@ -39,15 +39,15 @@ shape = SubResource("CapsuleShape2D_662u0")
 position = Vector2(237, 81)
 texture = ExtResource("2_jvs31")
 
-[node name="PhotoSpot" type="Area2D" parent="." unique_id=1469931367]
+[node name="PhotoSpot1" type="Area2D" parent="." unique_id=1469931367]
 position = Vector2(401, 95)
 script = ExtResource("3_jvs31")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="PhotoSpot" unique_id=3427623]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PhotoSpot1" unique_id=3427623]
 position = Vector2(228, 83)
 shape = SubResource("CapsuleShape2D_662u0")
 
-[node name="Sprite2D" type="Sprite2D" parent="PhotoSpot" unique_id=1828213304]
+[node name="Sprite2D" type="Sprite2D" parent="PhotoSpot1" unique_id=1828213304]
 position = Vector2(237, 81)
 texture = ExtResource("2_jvs31")
 
@@ -64,5 +64,5 @@ position = Vector2(-106, 328)
 texture = ExtResource("2_jvs31")
 
 [connection signal="body_entered" from="PhotoSpot3" to="PhotoSpot3" method="_on_body_entered"]
-[connection signal="body_entered" from="PhotoSpot" to="PhotoSpot" method="_on_body_entered"]
+[connection signal="body_entered" from="PhotoSpot1" to="PhotoSpot1" method="_on_body_entered"]
 [connection signal="body_entered" from="PhotoSpot2" to="PhotoSpot2" method="_on_body_entered"]
