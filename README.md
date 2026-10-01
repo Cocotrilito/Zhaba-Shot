@@ -2,6 +2,8 @@
 
 # Zhaba-Shot: Frog Photographer
 
+<img src="/sprites/beach.png">
+
 [![Play on itch.io](https://img.shields.io/badge/Play_it-on_itch.io-FA5C5C?style=for-the-badge&logo=itchdotio&logoColor=white)](https://cocotrilo.itch.io/zhaba-shot)
 ![Godot](https://img.shields.io/badge/Godot-478CBF?style=for-the-badge&logo=godotengine&logoColor=white)
 ![GDScript](https://img.shields.io/badge/GDScript-355570?style=for-the-badge&logo=godotengine&logoColor=white)
