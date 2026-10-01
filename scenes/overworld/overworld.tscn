@@ -7,7 +7,6 @@
 [ext_resource type="Script" uid="uid://ckmgsy3dcgk2i" path="res://scripts/photoSpot.gd" id="3_jvs31"]
 [ext_resource type="Texture2D" uid="uid://dexnpfyksnqcd" path="res://sprites/limit.png" id="3_lvsx0"]
 [ext_resource type="Texture2D" uid="uid://c4fvf3jaeyomn" path="res://sprites/spot.png" id="5_b1b42"]
-[ext_resource type="AudioStream" uid="uid://cre1sl1cboqx0" path="res://Mr. Toad.mp3" id="8_lvsx0"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_bduoi"]
 texture = ExtResource("2_0wbp6")
@@ -232,11 +231,6 @@ shape = SubResource("CapsuleShape2D_662u0")
 position = Vector2(-113, 207)
 scale = Vector2(1.5, 1.53125)
 texture = ExtResource("5_b1b42")
-
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=511200894]
-stream = ExtResource("8_lvsx0")
-autoplay = true
-parameters/looping = true
 
 [connection signal="body_entered" from="PhotoSpot3" to="PhotoSpot3" method="_on_body_entered"]
 [connection signal="body_entered" from="PhotoSpot1" to="PhotoSpot1" method="_on_body_entered"]

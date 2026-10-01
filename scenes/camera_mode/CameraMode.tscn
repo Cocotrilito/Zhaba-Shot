@@ -67,9 +67,9 @@ offset_bottom = 115.0
 icon = ExtResource("5_ek4hc")
 
 [node name="ScoreLabel" type="Label" parent="." unique_id=1365453263]
-offset_left = 205.0
+offset_left = 119.0
 offset_top = 4.0
-offset_right = 317.0
+offset_right = 231.0
 offset_bottom = 62.0
 theme_override_colors/font_color = Color(1, 1, 0, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 0)
@@ -79,7 +79,7 @@ theme_override_constants/shadow_offset_x = 1
 theme_override_constants/shadow_offset_y = 2
 theme_override_constants/outline_size = 2
 theme_override_fonts/font = SubResource("SystemFont_l4kv0")
-theme_override_font_sizes/font_size = 24
+theme_override_font_sizes/font_size = 10
 script = ExtResource("5_dd5a2")
 
 [node name="HintLabel" type="Label" parent="." unique_id=1415250124]
