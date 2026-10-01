@@ -1,8 +1,35 @@
 [gd_scene format=3 uid="uid://6652bwx23r17"]
 
+[ext_resource type="Texture2D" uid="uid://jr2l4mdsfdsw" path="res://sprites/alley.png" id="1_ulig0"]
+
+[sub_resource type="SystemFont" id="SystemFont_okh34"]
+font_names = PackedStringArray("Apple Garamond")
+
 [node name="WinScreen" type="Node2D" unique_id=1703686384]
 
+[node name="Alley" type="Sprite2D" parent="." unique_id=361867087]
+modulate = Color(0.32915837, 0.3291584, 0.3291584, 1)
+position = Vector2(160, 121)
+texture = ExtResource("1_ulig0")
+
 [node name="Label" type="Label" parent="." unique_id=1717325807]
-offset_right = 40.0
-offset_bottom = 23.0
-text = "you know nothing"
+offset_left = 58.0
+offset_top = 98.0
+offset_right = 257.0
+offset_bottom = 155.0
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme_override_colors/font_color = Color(1, 1, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/line_spacing = 2
+theme_override_constants/paragraph_spacing = 1
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 2
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = SubResource("SystemFont_okh34")
+theme_override_font_sizes/font_size = 19
+text = "Thanks for playing
+Жаба делает снимок"
+horizontal_alignment = 1
+vertical_alignment = 1

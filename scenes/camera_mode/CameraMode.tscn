@@ -3,8 +3,9 @@
 [ext_resource type="Script" uid="uid://cktdc32881n6x" path="res://scripts/frameRect.gd" id="1_lpw30"]
 [ext_resource type="Script" uid="uid://bh1312nidoc0m" path="res://scripts/CameraMode.gd" id="1_q1sx6"]
 [ext_resource type="Shader" uid="uid://pt8hqmdr371g" path="res://scenes/camera_mode/CameraMode.gdshader" id="2_q4hjm"]
-[ext_resource type="Texture2D" uid="uid://hpb5p2ymwgrv" path="res://icon.svg" id="3_qejjj"]
+[ext_resource type="Texture2D" uid="uid://dwfu1vlynd57f" path="res://sprites/beach.png" id="3_ek4hc"]
 [ext_resource type="Script" uid="uid://cawove5qpni60" path="res://scenes/camera_mode/score_label.gd" id="5_dd5a2"]
+[ext_resource type="Texture2D" uid="uid://xe7dflfiftd2" path="res://sprites/shoot.png" id="5_ek4hc"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_qejjj"]
 shader = ExtResource("2_q4hjm")
@@ -12,66 +13,88 @@ shader_parameter/noise_amount = 0.0
 shader_parameter/brightness_value = 1.0
 shader_parameter/blur_amount = 0.0
 
+[sub_resource type="SystemFont" id="SystemFont_l4kv0"]
+font_names = PackedStringArray("Apple Garamond")
+
+[sub_resource type="SystemFont" id="SystemFont_ek4hc"]
+font_names = PackedStringArray("Apple Garamond")
+
 [node name="camera mode" type="Node2D" unique_id=1996290611]
 script = ExtResource("1_q1sx6")
 
 [node name="SceneBackground" type="Sprite2D" parent="." unique_id=708845342]
 material = SubResource("ShaderMaterial_qejjj")
-position = Vector2(485, 308)
-scale = Vector2(5.0390625, 3.5625)
-texture = ExtResource("3_qejjj")
+position = Vector2(160, 120.36719)
+scale = Vector2(0.9935546, 0.99694014)
+texture = ExtResource("3_ek4hc")
 
 [node name="FrameRect" type="ColorRect" parent="." unique_id=1433506176]
-custom_minimum_size = Vector2(300, 300)
-offset_left = 326.0
-offset_top = 164.0
-offset_right = 626.0
-offset_bottom = 464.0
-color = Color(0.56301695, 0.7396357, 0.75621784, 0.41568628)
+custom_minimum_size = Vector2(120, 90)
+offset_left = 171.0
+offset_top = 69.0
+offset_right = 291.0
+offset_bottom = 159.0
+color = Color(0.56558174, 0.7419195, 0.75759274, 0.41568628)
 script = ExtResource("1_lpw30")
 
 [node name="ApertureSlider" type="HSlider" parent="." unique_id=467043713]
 offset_left = 5.0
 offset_top = 18.0
-offset_right = 162.0
+offset_right = 113.0
 offset_bottom = 34.0
 value = 50.0
 
 [node name="ShutterSlider" type="HSlider" parent="." unique_id=447111033]
 offset_left = 4.0
 offset_top = 38.0
-offset_right = 158.0
+offset_right = 114.0
 offset_bottom = 54.0
 value = 1.0
 
 [node name="ISOSlider" type="HSlider" parent="." unique_id=569981968]
 offset_left = 4.0
 offset_top = 57.0
-offset_right = 159.0
+offset_right = 113.0
 offset_bottom = 73.0
 min_value = 1.0
 value = 1.0
 
 [node name="TakePhotoButton" type="Button" parent="." unique_id=1036010133]
-offset_left = 9.0
-offset_top = 79.0
-offset_right = 154.0
-offset_bottom = 107.0
-text = "SHOOOT!"
+offset_left = 6.0
+offset_top = 75.0
+offset_right = 46.0
+offset_bottom = 115.0
+icon = ExtResource("5_ek4hc")
 
 [node name="ScoreLabel" type="Label" parent="." unique_id=1365453263]
-offset_left = 906.0
-offset_top = 2.0
-offset_right = 1018.0
-offset_bottom = 60.0
-theme_override_font_sizes/font_size = 40
+offset_left = 205.0
+offset_top = 4.0
+offset_right = 317.0
+offset_bottom = 62.0
+theme_override_colors/font_color = Color(1, 1, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/line_spacing = 3
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 2
+theme_override_constants/outline_size = 2
+theme_override_fonts/font = SubResource("SystemFont_l4kv0")
+theme_override_font_sizes/font_size = 24
 script = ExtResource("5_dd5a2")
 
 [node name="HintLabel" type="Label" parent="." unique_id=1415250124]
-offset_left = 13.0
-offset_top = 122.0
-offset_right = 53.0
-offset_bottom = 145.0
+offset_left = 16.0
+offset_top = 207.0
+offset_right = 56.0
+offset_bottom = 230.0
+theme_override_colors/font_color = Color(0.72440344, 0.72154, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/line_spacing = 3
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 1
+theme_override_constants/outline_size = 2
+theme_override_fonts/font = SubResource("SystemFont_ek4hc")
 
 [connection signal="changed" from="ApertureSlider" to="." method="_on_aperture_slider_changed"]
 [connection signal="pressed" from="TakePhotoButton" to="." method="_on_take_photo_button_pressed"]

@@ -12,6 +12,14 @@ extends Node2D
 
 
 func _ready():
+	
+	var mission_backgrounds = {
+		1: preload("res://sprites/beach.png"),
+		2: preload("res://sprites/alley.png"),
+		3: preload("res://sprites/smoke.png")
+	}
+	background.texture = mission_backgrounds[GameState.current_mission]
+	
 	hint_label.text = GameState.mission_data[GameState.current_mission]["hint"]
 	aperture_slider.value = randi_range(0, 100)
 	shutter_slider.value = randi_range(0, 100)
@@ -54,7 +62,7 @@ func calculate_frame_score():
 	var frame_center = frame_rect.global_position + frame_rect.size / 2.0
 	var screen_center = get_viewport_rect().size / 2.0
 	var distance = frame_center.distance_to(screen_center)
-	var max_distance = 300.0
+	var max_distance = 150.0
 	return clamp(1.0 - (distance / max_distance), 0.0, 1.0)
 
 
